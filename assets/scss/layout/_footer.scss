@@ -1,0 +1,105 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  00. FOOTER CSS START
+/*----------------------------------------*/
+
+.footer-widget{
+        overflow: hidden;
+    & .footer-widget-title{
+        color: #fff;
+        font-size: 16px;
+        margin-bottom: 30px;
+    }
+    & p{
+        color: #aeaeae;
+    }
+    & ul{
+        & li{
+            margin-bottom: 8px;
+            color: #aeaeae;
+            list-style: none;
+            width: 50%;
+            float: left;
+            &:before{
+                content: "\f105";
+                font-family: var(--ic-ff-fontawesome);
+                margin-right: 8px;
+                display: inline-block;
+                transform: translateY(1px);
+            }
+        }
+    }
+}
+.footer-col-2{
+    padding-left: 55px;
+    @media #{$lg,$md,$xs}{
+        padding-left: 0;
+    }
+}
+.footer-col-3{
+    padding-left: 10px;
+    @media #{$lg,$md,$xs}{
+        padding-left: 0;
+    }
+}
+.footer-col-4{
+    padding-left: 20px;
+    @media #{$lg,$md,$xs}{
+        padding-left: 0;
+    }
+}
+ .footer-subscribe button{
+    position: absolute;
+    background: var(--ic-theme-1);
+    width: 60px;
+    height: 100%;
+    color: #fff;
+    right: 0;
+    top: 0;
+ }
+.footer-subscribe{
+    position: relative;
+    & input{
+        width: 100%;
+        height: 60px;
+        padding: 0 20px;
+        background: #1a1a1a;
+        border: 0;
+    }
+}
+
+.footer-subscribe input::-moz-placeholder {
+    color: #737373;
+    font-size: 14px;
+    opacity: 1;
+}
+.footer-subscribe input::placeholder {
+    color: #737373;
+    font-size: 14px;
+    opacity: 1;
+}
+.footer-social{
+    & a{
+        margin-right: 20px;
+        font-size: 14px;
+    }
+}
+.copyright-text{
+    & p{
+        color: #fff;
+        margin: 0;
+        @media #{$md,$xs}{
+            margin-bottom: 5px;
+        }
+    }
+}
+.copyright-menu{
+    & ul{
+        & li{
+            display: inline-block;
+            color: #fff;
+            margin-left: 40px;
+        }
+    }
+}

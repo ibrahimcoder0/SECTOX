@@ -1,0 +1,41 @@
+@use '../utils' as *;
+
+.text-center{
+    & .ic-title-transparent{
+        z-index: -1;
+        right: 0;
+    }
+}
+.grey-bg{
+    & .ic-title-transparent{
+        -webkit-text-stroke: 1px #e7e7e7;
+        color: transparent;
+        z-index: 1;
+    }
+}
+.black-bg{
+    & .ic-section-title{
+        color: #fff;
+    }
+    & .ic-title-transparent{
+        -webkit-text-stroke: 1px #474747;
+        color: transparent;
+        z-index: 1;
+    }
+}
+.ic-section-title {
+    font-size: 60px;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 2;
+    @media #{$lg}{
+        font-size: 45px;
+    }
+    @media #{$xs}{
+        font-size: 40px;
+    }
+    @media #{$xs}{
+        font-size: 35px;
+    }
+}
+

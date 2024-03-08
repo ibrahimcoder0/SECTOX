@@ -1,0 +1,78 @@
+@use '../utils' as *;
+
+.ic-testimonial{
+	background: #fff;
+	padding: 50px 40px;
+	position: relative;
+	& h4{
+		font-size: 24px;
+		margin-bottom: 25px;
+		@media #{$lg}{
+        	font-size: 18px;
+    	}
+    	@media #{$md}{
+        	font-size: 18px;
+    	}
+    	@media #{$xs}{
+        	font-size: 18px;
+    	}
+	}
+}
+.ic-testimonial-img{
+	position: relative;
+	display: inline-block;
+	margin-bottom: 14px;
+	z-index: 2;
+	& i{
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		background: #3c8599;
+		color: #fff;
+		height: 25px;
+		width: 25px;
+		text-align: center;
+		line-height: 25px;
+		border-radius: 30px;
+		right: -15px;
+	}
+}
+.ic-testimonial-meta {
+    position: relative;
+    z-index: 2;
+}
+.testimonial-name{
+	font-size: 24px;
+	margin-bottom: 3px;
+	@media #{$lg}{
+        font-size: 18px;
+    }
+    @media #{$md}{
+        font-size: 18px;
+    }
+    @media #{$xs}{
+        font-size: 18px;
+    }
+}
+.testimonial-position{
+	font-size: 14px;
+	font-weight: 400;
+	margin: 0;
+}
+.quote-icon{
+	position: absolute;
+	bottom: 42px;
+	left: 0;
+	right: 0;
+	z-index: 1;
+	& img{
+		display: inline-block;
+	}
+}
+.slide-space-30 .slick-list {
+    margin: 0 -15px;
+}
+
+.slide-space-30 .slick-slide > div {
+    padding: 0 15px;
+}

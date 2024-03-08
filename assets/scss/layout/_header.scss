@@ -1,0 +1,172 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  01. HEADER CSS START
+/*----------------------------------------*/
+
+.header_main_area {
+  @media #{$xxxl} {
+    padding: 0 30px;
+  }
+  @media #{$xxl} {
+    padding: 0 15px;
+  }
+  @media #{$xl} {
+    padding: 0 15px;
+  }
+  @media #{$md} {
+    padding: 0 15px;
+  }
+  @media #{$xs} {
+    padding: 0 15px;
+  }
+}
+.sticky {
+  & .header__sticky {
+    position: fixed !important;
+    left: 0;
+    margin: auto;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.07);
+    z-index: 99;
+    -webkit-animation: 300ms ease-in-out 0s normal none 1 running fadeInDown;
+    animation: 300ms ease-in-out 0s normal none 1 running fadeInDown;
+    -webkit-box-shadow: 0 10px 15px rgba(25, 25, 25, 0.1);
+    background: var(--ic-common-white);
+  }
+}
+
+.header_notification_text {
+  & p {
+    color: var(--ic-common-white);
+    & b {
+      color: #ffb614;
+    }
+  }
+}
+.ic_main_menu {
+  & ul {
+    & li {
+      display: inline-block;
+      margin: 0 30px;
+      position: relative;
+      @media #{$xxxl} {
+        margin: 0 20px;
+      }
+      @media #{$xxl} {
+        margin: 0 18px;
+      }
+      @media #{$xl} {
+        margin: 0 11px;
+      }
+      &.has-dropdown:after {
+        content: '\2b';
+        font-family: var(--ic-ff-fontawesome);
+        font-size: 14px;
+        color: var(--ic-common-black);
+      }
+      & a {
+        color: var(--ic-common-black);
+        font-weight: var(--ic-fw-bold);
+        padding: 42px 0;
+        display: inline-block;
+      }
+      &:hover > {
+        & a {
+          color: var(--ic-theme-1);
+        }
+      }
+      & .submenu {
+        position: absolute;
+        width: 220px;
+        background: var(--ic-common-black);
+        text-align: left;
+        transition: 0.3s;
+        padding: 30px;
+        left: 0;
+        top: 105%;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 5;
+        & li {
+          display: block;
+          margin: 0;
+          & a {
+            color: var(--ic-common-white);
+            padding: 0;
+            &:hover {
+              color: var(--ic-theme-1);
+            }
+          }
+          &:not(:last-child) {
+            margin-bottom: 10px;
+          }
+        }
+      }
+      &:hover > {
+        & .submenu {
+          top: 100%;
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+.ic_header_right {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+.ic-header-icon {
+  height: 48px;
+  width: 48px;
+  border: 1px solid #e8e8e8;
+  display: inline-block;
+  text-align: center;
+  line-height: 45px;
+  margin-left: 10px;
+}
+
+.ic-sidebar-menu {
+  position: fixed;
+  right: -100%;
+  top: 0;
+  width: 320px;
+  height: 100%;
+  background: #ffffff none repeat scroll 0 0;
+  overflow-y: scroll;
+  -webkit-box-shadow: -5px 0 20px -5px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: -5px 0 20px -5px rgba(0, 0, 0, 0.5);
+  box-shadow: -5px 0 20px -5px rgba(0, 0, 0, 0.5);
+  -webkit-transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  -moz-transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  z-index: 9999;
+  padding: 0 30px;
+}
+
+.body-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 99;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.3s ease-out 0s;
+  -moz-transition: all 0.3s ease-out 0s;
+  -ms-transition: all 0.3s ease-out 0s;
+  -o-transition: all 0.3s ease-out 0s;
+  transition: all 0.3s ease-out 0s;
+}
+.body-overlay.opened {
+  opacity: 1;
+  visibility: visible;
+}
+.ic-sidebar-menu.opened {
+  right: 0;
+}
